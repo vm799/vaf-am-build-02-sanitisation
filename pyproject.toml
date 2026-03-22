@@ -1,0 +1,12 @@
+[project]
+name = "vaf-am-build-02-sanitisation"
+version = "1.0.0"
+requires-python = ">=3.11"
+description = "VAF AM Series: Deterministic Sanitisation — Built with Claude AI"
+dependencies = [
+    "pydantic>=2.10.0",
+    "python-dotenv>=1.0.0",
+    "aiosqlite>=0.20.0",
+]
+[project.optional-dependencies]
+dev = ["pytest>=8.3.0"]
