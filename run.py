@@ -135,6 +135,13 @@ def save_report(report: dict):
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(f"  📄 Report → {path}")
 
+    # Auto-sync to portfolio so Results tab updates immediately
+    import shutil
+    portfolio_data = Path(__file__).parent.parent / "portfolio" / "data"
+    if portfolio_data.exists():
+        shutil.copy(path, portfolio_data / "build_02.json")
+        print(f"  📊 Portfolio synced → portfolio/data/build_02.json")
+
 
 def main():
     demo_only = "--demo" in sys.argv
